@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="fa-ir" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>پرفروش ترین ها</title>
+    <link rel="stylesheet" href="./src/css/main.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+
+      .pb-page {
+        font-family: Vazirmatn, Tahoma, sans-serif;
+        color: #23254e;
+        background: #fff;
+      }
+      .pb-page * {
+        box-sizing: border-box;
+      }
+      .pb-page a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+
+      .pb-hero {
+        height: 130px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top: 1px solid #e0e0e6;
+        background-color: #fff;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='130'%3E%3Cg fill='none' stroke='%23fbb9c5' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='20' cy='10' r='5'/%3E%3Ccircle cx='240' cy='18' r='5'/%3E%3Cpath d='M60 18h14M64 24h8M150 80l8 8M158 80l-8 8M100 100l10 0M105 95v10M200 70h16M205 76h8M30 90l10 8M220 112l8 -8'/%3E%3Cpath d='M120 30l10 0l-5 9z' fill='%23fdd5dc'/%3E%3Cellipse cx='70' cy='85' rx='6' ry='5' fill='%23fdd5dc'/%3E%3C/g%3E%3C/svg%3E");
+        background-size: 280px 130px;
+      }
+      .pb-hero h1 {
+        font-size: 34px;
+        font-weight: 800;
+        color: #ef394e;
+        margin: 0;
+        background: #fff;
+        padding: 0 16px;
+        border-radius: 10px;
+        line-height: 1.4;
+      }
+
+
+      .pb-tabs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 34px;
+        max-width: 1100px;
+        margin: 22px auto 34px;
+        padding: 0 20px;
+      }
+      .pb-tabs::before,
+      .pb-tabs::after {
+        content: "";
+        flex: 1;
+        height: 2px;
+        max-width: 360px;
+      }
+      .pb-tabs::before {
+        background: linear-gradient(to left, #ef394e, transparent);
+      }
+      .pb-tabs::after {
+        background: linear-gradient(to right, #ef394e, transparent);
+      }
+      .pb-tab {
+        background: none;
+        border: 0;
+        font: inherit;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        color: #23254e;
+        padding: 6px 0;
+      }
+      .pb-tab.active {
+        color: #ef394e;
+      }
+
+
+      .pb-wrap {
+        max-width: 1650px;
+        margin: auto;
+        padding: 0 20px;
+      }
+      .pb-chips {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px 14px;
+        margin-bottom: 60px;
+      }
+      .pb-chip {
+        border: 1px solid #e0e0e6;
+        background: #fff;
+        border-radius: 999px;
+        padding: 11px 22px;
+        font: inherit;
+        font-size: 13px;
+        font-weight: 500;
+        color: #23254e;
+        cursor: pointer;
+        transition: 0.15s;
+      }
+      .pb-chip:hover {
+        border-color: #ef394e;
+      }
+      .pb-chip.active {
+        border-color: #ef394e;
+        color: #ef394e;
+        background: #fff5f6;
+      }
+
+      /* گرید محصولات: هر کارت جدید خودش به گرید اضافه میشه */
+      .pb-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        border-top: 1px solid #f0f0f1;
+      }
+      .pb-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 34px 30px 18px;
+        min-height: 480px;
+        border-bottom: 1px solid #f0f0f1;
+        border-left: 1px solid #f0f0f1;
+        background: #fff;
+      }
+      .pb-card:nth-child(6n) {
+        border-left: 0;
+      }
+      .pb-special {
+        position: absolute;
+        top: 18px;
+        right: 30px;
+        color: #ef394e;
+        font-weight: 800;
+        font-size: 14px;
+      }
+      .pb-rank {
+        position: absolute;
+        top: 42px;
+        right: 30px;
+        min-width: 31px;
+        height: 27px;
+        border-radius: 6px;
+        background: #2a6fdb;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+      }
+      .pb-img {
+        height: 210px;
+        margin: 34px 0 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .pb-img img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border-radius: 6px;
+      }
+      .pb-var {
+        align-self: center;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #f0f0f1;
+        color: #62666d;
+        font-size: 11px;
+        padding: 4px 10px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+      }
+      .pb-title {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 2;
+        color: #23254e;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        min-height: 48px;
+      }
+      .pb-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 11px;
+        color: #81858b;
+        margin: 10px 0 16px;
+      }
+      .pb-meta .rate {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: #23254e;
+        font-weight: 700;
+      }
+      .pb-meta .rate i {
+        color: #fdb81e;
+        font-style: normal;
+        font-size: 14px;
+      }
+      .pb-price {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 26px;
+      }
+      .pb-off {
+        background: #ef394e;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 800;
+        padding: 2px 9px;
+        border-radius: 999px;
+      }
+      .pb-now {
+        font-size: 15px;
+        font-weight: 800;
+        color: #23254e;
+      }
+      .pb-now small {
+        font-size: 11px;
+        font-weight: 400;
+        margin-right: 4px;
+        color: #62666d;
+      }
+      .pb-now em {
+        font-style: normal;
+        font-size: 11px;
+        font-weight: 400;
+        color: #81858b;
+        margin-left: 4px;
+      }
+      .pb-old {
+        text-align: left;
+        color: #c0c2c5;
+        font-size: 12px;
+        text-decoration: line-through;
+        margin-top: 6px;
+        min-height: 18px;
+      }
+
+      @media (max-width: 1400px) {
+        .pb-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        .pb-card:nth-child(6n) {
+          border-left: 1px solid #f0f0f1;
+        }
+        .pb-card:nth-child(4n) {
+          border-left: 0;
+        }
+      }
+      @media (max-width: 900px) {
+        .pb-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .pb-card:nth-child(4n) {
+          border-left: 1px solid #f0f0f1;
+        }
+        .pb-card:nth-child(3n) {
+          border-left: 0;
+        }
+      }
+      @media (max-width: 600px) {
+        .pb-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .pb-card:nth-child(3n) {
+          border-left: 1px solid #f0f0f1;
+        }
+        .pb-card:nth-child(2n) {
+          border-left: 0;
+        }
+        .pb-card {
+          padding: 30px 14px 14px;
+        }
+        .pb-hero h1 {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+        
+        <!--top-ads-->
+        <div class="ads-top">
+          <img src="./src/images/header/header-ads.gif" alt="تخفیفات" />
+        </div>
+        <!--top-ads-->
+        <!--top header-->
+        <div class="top-header">
+          <div class="top-header-items">
+            <!--logo, searchbar, icons-->
+            <div class="top-header-right">
+              <div class="logo">
+                <a href="./index.html">
+                <img src="./src/images/header/logo.svg" alt="لوگو" />
+                </a>
+              </div>
+              <div class="searchbar">
+                <div class="searchbar-logo">
+                  <img
+                    src="./src/images/header/searchbar0logo.svg"
+                    alt="آیکن جستجو"
+                  />
+                </div>
+                <input
+                  type="search"
+                  name="search"
+                  id="search"
+                  placeholder="جستجو"
+                />
+              </div>
+            </div>
+            <div class="top-header-left">
+              <div class="reminder">
+                <a href="">
+                  <img src="./src/images/header/alarm.svg" alt="اعلانات" />
+                </a>
+              </div>
+
+              <div class="account">
+                <a href="">
+                  <img
+                    src="./src/images/header/svgexport-4.svg"
+                    alt="پنل کاربری"
+                  />
+                  <img
+                    src="./src/images/header/svgexport-5.svg"
+                    alt="دکمه ساب منو"
+                  />
+                </a>
+              </div>
+              <span class="divid">|</span>
+              <div class="add-to-card">
+                <a href="">
+                  <img
+                    src="./src/images/header/svgexport-6.svg"
+                    alt="سبد خرید"
+                  />
+                </a>
+              </div>
+            </div>
+            <!--logo, searchbar, icons-->
+          </div>
+        </div>
+        <!--top header-->
+        <!--bottom header-->
+        <div class="bottom-header">
+          <!--menu-->
+          <div class="menu">
+            <nav>
+              <div class="category-product-menu">
+                <span class="cpm-label"
+                  ><span class="cpm-burger"></span>دسته بندی کالاها</span
+                >
+                <div class="cpm-mega">
+                  <ul class="cpm-cats" id="cpmCats"></ul>
+                  <div class="cpm-panel" id="cpmPanel"></div>
+                </div>
+              </div>
+              <span class="divid-bottom">|</span>
+              <a href="" class="wow-menu">شگفت انگیزها</a>
+              <a href="" class="supermarket-menu">سوپرمارکت</a>
+              <a href="" class="gold-menu">طلای و نقره دیجیتال</a>
+              <a href="./bestsells.html" class="bestsells-menu">پرفروش ترین ها</a>
+              <a href="" class="digistyle-menu">دیجی استایل</a>
+              <a href="" class="seller-menu">در دیجی کالا بفروشید!</a>
+            </nav>
+          </div>
+          <!--menu-->
+          <!--location-->
+          <div class="location"></div>
+          <!--location-->
+        </div>
+        <!--bottom header-->
+      </div>
+      <!-- header digikala-->
+    </div>
+    <hr />
+    <div class="pb-page">
+      <section class="pb-hero"><h1>پرفروش ترین ها</h1></section>
+
+      <div class="pb-tabs">
+        <button class="pb-tab active">۷ روز گذشته</button>
+        <button class="pb-tab">۳۰ روز گذشته</button>
+      </div>
+
+      <div class="pb-wrap">
+        <div class="pb-chips" id="pbChips"></div>
+
+        <div class="pb-grid" id="pbGrid"></div>
+      </div>
+    </div>
+
+    <script>
+      const CHIPS = [
+        "همه نوع کالا",
+        "موبایل",
+        "اسباب بازی",
+        "کالای دیجیتال",
+        "طلا و نقره",
+        "مد و پوشاک",
+        "خانه و آشپزخانه",
+        "کالای خوراکی و اساسی",
+        "کتاب، لوازم تحریر و هنر",
+        "پت شاپ",
+        "لوازم خانگی برقی",
+        "مادر و کودک",
+        "سلامت و پزشکی",
+        "آرایشی و بهداشتی",
+        "کارت هدیه",
+        "محصولات بومی و محلی",
+        "خودرو و موتورسیکلت",
+        "ابزار آلات و تجهیزات",
+        "ورزش و سفر",
+      ];
+
+      const PRODUCTS = [
+        {
+          img: "./src/images/amazing/1.webp",
+          t: "کپسول ژلاتینی نرم زینک پلاس فیشر فلکسان مدل Zinc Plus حاوی زینک ۱۰ میلی‌گرم، ویتامین C 500 میلی‌گرم",
+          r: 4.3,
+          p: 300000,
+          old: 1056000,
+          off: 72,
+        },
+        {
+          img: "./src/images/amazing/2.webp",
+          t: "قرص ویتامین D3 یورووایتال مدل 1000 واحدی بسته 60 عددی، تقویت سیستم ایمنی و افزایش استحکام استخوان",
+          r: 4.5,
+          p: 132000,
+          old: 572000,
+          off: 77,
+        },
+        {
+          img: "./src/images/amazing/3.webp",
+          t: "کپسول مکمل منیزیم دریایی هولیستیکا مدل مگنیفورته بسته 32 عددی با ویتامین B1, B6, D3 و K",
+          r: 4.6,
+          p: 359890,
+          old: 861900,
+          off: 58,
+        },
+        {
+          img: "./src/images/amazing/4.webp",
+          t: "کارت هدیه الکترونیکی دیجی کالا طرح ایلیا کد 12",
+          r: 4.4,
+          p: 50000,
+          from: true,
+          changeable: true,
+        },
+        {
+          img: "./src/images/amazing/5.webp",
+          t: "قرص ویتامین D3 هلث اید مدل 1000IU بسته 30 عددی، تقویت استخوان، افزایش جذب کلسیم",
+          r: 4.4,
+          p: 90000,
+          old: 214500,
+          off: 58,
+        },
+        {
+          img: "./src/images/amazing/6.webp",
+          t: "ویال خوراکی ال-کارنیتین عصاره قهوه سبز یورووایتال مدل 6 عددی با طعم پرتقال، بهبود متابولیسم",
+          r: 4.4,
+          p: 150000,
+          old: 660000,
+          off: 77,
+        },
+        {
+          img: "./src/images/amazing/7.webp",
+          t: "ژل شستشوی صورت دیپ سنس مدل درخت چای و بامبو مناسب پوست‌های چرب حجم 250 میلی‌لیتر",
+          r: 4.4,
+          p: 265100,
+          old: 420000,
+          off: 37,
+          special: true,
+        },
+        {
+          img: "./src/images/amazing/8.webp",
+          t: "کرم ضد آفتاب بی رنگ مدل هیالورونیک SPF50 حجم 50 میلی‌لیتر",
+          r: 4.2,
+          p: 319000,
+          special: true,
+        },
+        {
+          img: "./src/images/amazing/9.webp",
+          t: "کتاب هنر جذب مخاطب اثر کورش اکبری نشر گوهر دانش",
+          r: 4.7,
+          p: 189000,
+          old: 240000,
+          off: 21,
+        },
+        {
+          img: "./src/images/amazing/10.webp",
+          t: "کرم آبرسان دست و صورت مدل هیالورونیک حجم 100 میلی‌لیتر",
+          r: 4.1,
+          p: 119000,
+          special: true,
+        },
+        {
+          img: "./src/images/amazing/11.webp",
+          t: "هندزفری بلوتوثی مدل TWS مناسب گوشی موبایل با قابلیت حذف نویز",
+          r: 4.0,
+          p: 540000,
+          old: 900000,
+          off: 40,
+        },
+        {
+          img: "./src/images/amazing/12.webp",
+          t: "کیف و کاور گوشی موبایل سامسونگ مدل Galaxy A56 مقاوم در برابر ضربه",
+          r: 4.3,
+          p: 95000,
+          old: 150000,
+          off: 37,
+          special: true,
+        },
+      ];
+
+      const fa = (n) => Number(n).toLocaleString("fa-IR");
+      const faRate = (n) =>
+        Number(n).toLocaleString("fa-IR", { minimumFractionDigits: 1 });
+
+      document.getElementById("pbChips").innerHTML = CHIPS.map(
+        (c, i) => `<button class="pb-chip${i ? "" : " active"}">${c}</button>`,
+      ).join("");
+
+      document.getElementById("pbGrid").innerHTML = PRODUCTS.map(
+        (p, i) => `
+ <article class="pb-card">
+  ${p.special ? '<span class="pb-special">فروش ویژه</span>' : ""}
+  <span class="pb-rank">${fa(i + 1)}</span>
+  <a href="#" class="pb-img"><img src="${p.img}" alt="" onerror="this.style.visibility='hidden'"></a>
+  ${p.changeable ? '<span class="pb-var">مبلغ قابل تغییر است</span>' : ""}
+  <a href="#" class="pb-title">${p.t}</a>
+  <div class="pb-meta"><span>ارسال فروشنده</span><span class="rate"><span>${faRate(p.r)}</span><i>★</i></span></div>
+  <div class="pb-price">
+    ${p.off ? `<span class="pb-off">${fa(p.off)}٪</span>` : "<span></span>"}
+    <span class="pb-now">${p.from ? "<em>شروع از</em>" : ""}${fa(p.p)}<small>تومان</small></span>
+  </div>
+  <div class="pb-old">${p.old ? fa(p.old) : ""}</div>
+ </article>`,
+      ).join("");
+
+      document.querySelectorAll(".pb-tabs").forEach((g) =>
+        g.addEventListener("click", (e) => {
+          const b = e.target.closest(".pb-tab");
+          if (!b) return;
+          g.querySelectorAll(".pb-tab").forEach((x) =>
+            x.classList.toggle("active", x === b),
+          );
+        }),
+      );
+      document.getElementById("pbChips").addEventListener("click", (e) => {
+        const b = e.target.closest(".pb-chip");
+        if (!b) return;
+        document
+          .querySelectorAll(".pb-chip")
+          .forEach((x) => x.classList.toggle("active", x === b));
+      });
+    </script>
+  </body>
+</html>

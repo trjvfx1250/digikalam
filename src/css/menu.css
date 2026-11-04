@@ -1,0 +1,180 @@
+/* ===== mega menu ===== */
+.header {
+  position: relative;
+  z-index: 60;
+}
+.bottom-header {
+  position: relative;
+}
+
+.category-product-menu {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.cpm-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+.cpm-burger {
+  width: 16px;
+  height: 2px;
+  background: currentColor;
+  position: relative;
+  display: inline-block;
+}
+.cpm-burger::before,
+.cpm-burger::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+}
+.cpm-burger::before {
+  top: -5px;
+}
+.cpm-burger::after {
+  top: 5px;
+}
+
+.cpm-mega {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: min(1100px, 100%);
+  height: 560px;
+  background: #fff;
+  display: flex;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  border-radius: 0 0 10px 10px;
+  cursor: default;
+  text-align: right;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.15s,
+    visibility 0s 0.2s;
+}
+.cpm-mega::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  height: 20px;
+} /* پل برای اینکه موقع حرکت موس منو نبنده */
+.category-product-menu:hover .cpm-mega {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.cpm-cats {
+  width: 200px;
+  flex: none;
+  list-style: none;
+  margin: 0;
+  background: #f7f7f9;
+  overflow-y: auto;
+  padding: 6px 0;
+  border-left: 1px solid #e0e0e6;
+}
+.cpm-cats li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 18px;
+  height: 52px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #3f4064;
+  cursor: pointer;
+}
+.cpm-cats li .ic {
+  font-size: 16px;
+  filter: grayscale(1);
+  opacity: 0.7;
+}
+.cpm-cats li.active {
+  background: #fff;
+  color: #ef394e;
+  font-weight: 700;
+}
+.cpm-cats li.active .ic {
+  filter: none;
+  opacity: 1;
+}
+
+.cpm-panel {
+  flex: 1;
+  overflow-y: auto;
+  padding: 22px 32px 28px;
+}
+.cpm-all {
+  display: inline-block;
+  color: #1a73c9;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 26px;
+}
+.cpm-cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+.cpm-grp {
+  margin-bottom: 22px;
+}
+.cpm-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  padding-right: 10px;
+  border-right: 3px solid #ef394e;
+  line-height: 1.3;
+  margin-bottom: 12px;
+  color: #23254e;
+}
+.cpm-title i {
+  font-style: normal;
+  color: #81858b;
+  font-size: 12px;
+}
+.cpm-grp ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cpm-grp li a {
+  display: block;
+  padding: 7px 0;
+  font-size: 12.5px;
+  color: #62666d;
+  transition: color 0.12s;
+}
+.cpm-grp li a:hover {
+  color: #ef394e;
+}
+
+.cpm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+  z-index: 50;
+  pointer-events: none;
+}
+body.menu-open .cpm-overlay {
+  opacity: 1;
+  visibility: visible;
+}
