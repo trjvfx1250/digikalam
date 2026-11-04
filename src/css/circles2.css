@@ -1,0 +1,69 @@
+.category-cricle{
+    display: flex;
+    
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    p{
+        font-family: yekan;
+        font-size: 22px;
+        font-weight: 500;
+    }
+}
+.circles2{
+    width: 1300px;
+    height: 340px;
+    margin: 0 auto;
+   margin-bottom: 15px;
+    
+}
+.toprow{
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: space-between;
+    align-items: center;
+    .cir{
+        width: 100px;
+        height: 100px;
+        align-items: center;
+        img{
+            width: 100px;
+            height: 100px;
+        }
+        p{
+            color: black;
+            font-family: yekan;
+            font-size: 14px;
+            font-weight: 300;
+            text-align: center;
+            text-wrap:  nowrap;
+        }
+    }
+}
+
+.downrow{
+    display: flex;
+    margin-top: 50px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    .cir{
+        width: 100px;
+        height: 100px;
+        align-items: center;
+        img{
+            width: 100px;
+            height: 100px;
+        }
+        p{
+            color: black;
+            font-family: yekan;
+            font-size: 14px;
+            font-weight: 300;
+            text-align: center;
+            text-wrap:  nowrap;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+.circles {
+  width: 1260px;
+  height: 99.19px;
+  display: flex;
+  margin: 15px auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.circle-icon {
+  img {
+    width: 52px;
+    height: 52px;
+  }
+}
+a {
+  text-decoration: none;
+  .circle-text {
+    width: 96px;
+    height: 21.59px;
+    font-family: yekan;
+    font-size: 12px;
+    color: black;
+  }
+}
+
+.circle-box {
+  text-align: center;
+  align-items: center;
+}
+.circle-box2 {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 22px;
+  border-radius: 50%;
+  background-color: #f6f6f8;
+  .circle-text2 {
+    font-family: yekan;
+    font-size: 30px;
+    text-align: center;
+    
+  }
+}

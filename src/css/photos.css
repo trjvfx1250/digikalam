@@ -1,0 +1,18 @@
+.under-amazing {
+  width: 1290px;
+  height: 350px;
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+
+  .photos {
+    img {
+      border-radius: 16px;
+      width: 315px;
+      height: 235px;
+    }
+  }
+}

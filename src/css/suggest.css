@@ -1,0 +1,62 @@
+.mainsg {
+  width: 1300px;
+  margin: 0 auto;
+}
+.gridsuggest {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+  grid-auto-rows: auto;
+  align-items: center;
+
+  .post {
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    flex-direction: column;
+
+    p {
+      font-family: yekan;
+      font-size: 12px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      padding: 5px;
+      overflow: hidden;
+      text-align: start;
+      color: #000;
+    }
+    &:hover {
+      box-shadow: black 0px 0px 8px 1px;
+    }
+  }
+}
+.star {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row nowrap;
+  align-items: center;
+  p {
+    text-align: left;
+  }
+  img {
+    width: 15px;
+    height: 15px;
+  }
+}
+.price-suggest {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 5px;
+  column-gap: 6px;
+  img {
+    width: 15px;
+    height: 15px;
+  }
+}
+.pr {
+  font-size: 20px !important;
+  font-weight: 700;
+  font-family: digi-num !important;
+}
