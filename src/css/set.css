@@ -9,10 +9,10 @@
 
 @font-face {
   font-family: yekan;
-  src: url(/digikala-project/src/fonts/digikala.ttf);
+  src: url(../fonts/digikala.ttf);
 }
 
 @font-face {
   font-family: digi-num;
-  src: url(/digikala-project/src/fonts/Pinar-FD-VF[wght-KSHD-DSTY].ttf);
+  src: url(../fonts/Pinar-FD-VF[wght-KSHD-DSTY].ttf);
 }
